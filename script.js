@@ -3,13 +3,10 @@ getSumBtn.textContent = "Get Total Price";
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-  // Corrected class name to match HTML
   const prices = document.querySelectorAll(".price");
 
   let total = 0;
-
-  // Sum up the numeric values
-  prices.forEach((price) => {
+  prices.forEach(price => {
     total += parseFloat(price.textContent);
   });
 
@@ -17,8 +14,8 @@ const getSum = () => {
   const totalRow = document.createElement("tr");
   const totalCell = document.createElement("td");
 
-  // Make total cell span across columns
   totalCell.colSpan = 2;
+  totalCell.id = "ans"; // ✅ Important: add this so Cypress finds it
   totalCell.textContent = "Total Price: " + total;
 
   totalRow.appendChild(totalCell);
