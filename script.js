@@ -1,11 +1,11 @@
 const getSumBtn = document.createElement("button");
-getSumBtn.append("Get Total Price");
+getSumBtn.textContent = "Get Total Price";
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-  // Get all elements with class 'prices'
-  const prices = document.querySelectorAll(".prices");
-  
+  // Corrected class name to match HTML
+  const prices = document.querySelectorAll(".price");
+
   let total = 0;
 
   // Sum up the numeric values
@@ -17,11 +17,10 @@ const getSum = () => {
   const totalRow = document.createElement("tr");
   const totalCell = document.createElement("td");
 
-  // Make total cell span across columns (optional)
+  // Make total cell span across columns
   totalCell.colSpan = 2;
   totalCell.textContent = "Total Price: " + total;
 
-  // Append the cell to the row
   totalRow.appendChild(totalCell);
 
   // Append the row to the table
